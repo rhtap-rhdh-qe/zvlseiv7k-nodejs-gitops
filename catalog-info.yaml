@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: zvlseiv7k-nodejs-gitops
+  description: This is GitOps manifest for zvlseiv7k-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=zvlseiv7k-nodejs
+    backstage.io/kubernetes-id: zvlseiv7k-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: zvlseiv7k-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:zvlseiv7k-nodejs
